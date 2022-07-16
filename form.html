@@ -5,10 +5,43 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulários</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
         <style>
+            body {
+                font-family: 'Lato', sans-serif;
+            }
+
             form {
-                display: flex;
-                
+                display: flex;                         
+            }
+
+            input {
+                margin: 5px;
+            }
+
+            .dados {
+                float: right;
+                margin-left: 50px;
+                border-radius: 0;
+                border: .2px solid black;
+                box-sizing: border-box;
+            }
+
+            #enviar {
+                margin-left: 33%;  
+                margin-top: 20px;             
+                height: 30px;
+                width: 100px;
+                border: none;
+                cursor: pointer;
+                color: honeydew;
+                background-color: dimgrey;
+            }
+
+            .clear {
+                clear: both;
             }
 
         </style>
@@ -21,10 +54,22 @@
                 <legend>Contato</legend>
 
                 <label for="pnome">Nome</label>
-                <input type="text" name="pnome" id="pnome">
+                <input type="text" name="pnome" id="pnome" class="dados">
+
+                <div class="clear"></div>
+
 
                 <label for="snome">Sobrenome</label>
-                <input type="text" name="snome" id="snome">
+                <input type="text" name="snome" id="snome" class="dados">
+
+                <div class="clear"></div>
+
+
+                <label for="idade">Idade</label>
+                <input type="text" name="idade" id="idade" class="dados">
+
+                <div class="clear"></div>
+
 
                 <input type="button" id="enviar" value="Enviar">
             </fieldset>

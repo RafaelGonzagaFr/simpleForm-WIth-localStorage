@@ -1,13 +1,14 @@
 submitBtn = document.querySelector('#enviar')
 
 class Pessoa {
-    constructor(pnome, snome){
+    constructor(pnome, snome, idade){
         this.pnome = pnome
         this.snome = snome
+        this.idade = idade
     }
 
     amostrarNome() {
-        alert(`${this.pnome} ${this.snome}`)
+        alert(`${this.pnome} ${this.snome} ${this.idade}`)
     }
 }
 
@@ -39,15 +40,21 @@ let bd = new Bd()
 submitBtn.onclick = () => {
     let pnome = document.querySelector('#pnome')
     let snome = document.querySelector('#snome')
+    let idade = document.querySelector('#idade')
 
-    let pessoa = new Pessoa(pnome.value, snome.value)
+    if(pnome.value != '' && snome.value != '' && idade.value != ''){
+        let pessoa = new Pessoa(pnome.value, snome.value, idade.value)
 
-    pessoa.amostrarNome()
+        pessoa.amostrarNome()
 
-    bd.gravar(pessoa)
+        bd.gravar(pessoa)
 
-    pnome.value = ''
-    snome.value = ''
+        pnome.value = ''
+        snome.value = ''
+        idade.value = ''
+    } else {
+        alert('Preencha todos os dados')
+    }
 }
 
 
